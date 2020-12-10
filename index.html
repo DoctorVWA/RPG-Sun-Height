@@ -1,0 +1,39 @@
+<html>
+	<body>
+		<canvas id="canvas" width="800" height="500" onclick="copyToClipboard(this)"></canvas>
+		<form onchange="formUpdate()">
+			<label for="selectMode">Use real mode</label>
+			<input id="selectMode" type="checkbox"/>
+			<br>
+			<div id="real" style="display: none;">
+				<label for="lat">Latitude (not the coordinates, use the decimal notation)</label>
+				<input id="lat" type="number" min="-180" max="180" onkeyup="enforceMinMax(this)"/>
+				<br>
+				<label for="lon">Longitude (not the coordinates, use the decimal notation)</label>
+				<input id="lon" type="number" min="-90" max="90" onkeyup="enforceMinMax(this)"/>
+				<br>
+				<label for="date">Date and time</label>
+				<input id="date" type="datetime-local"/>
+			</div>
+			<div id="fictional" style="display: block;">
+				<!---- TODO moon phases and other options-->
+				<label for="riseTime">Sunrise time</label>
+				<input id="riseTime" type="time"/>
+				<br>
+				<label for="setTime">Sunset time</label>
+				<input id="setTime" type="time"/>
+				<br>
+				<label for="currentTime">Current time</label>
+				<input id="currentTime" type="time"/>
+			</div>
+			<label for="squareSize">Middle square size</label>
+			<input id="squareSize" type="number" min="0" max="150" onkeyup="enforceMinMax(this)"/>
+		</form>
+		<script type="text/javascript" src="./assets/js/util.js"></script>
+		<script type="text/javascript" src="./assets/js/suncalc.js"></script>
+		<script type="text/javascript" src="./assets/js/moment.min.js"></script>
+		<script type="text/javascript" src="./assets/js/moment-timezone-with-data.js"></script>
+		<script type="text/javascript" src="./assets/js/tz.min.js"></script>
+		<script type="text/javascript" src="./assets/js/main.js"></script>
+	</body>
+</html>
